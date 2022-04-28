@@ -7,7 +7,7 @@ const HomePage = () => {
       <MetaTags title="redwoodjs-stripe" description="Sandbox" />
       <div className="site-wrapper">
         <header>
-          <h1>redwoodjs-stripe</h1>
+          <h1 className="header__title">redwoodjs-stripe</h1>
           <p className="header__description">sandbox</p>
         </header>
         <main>

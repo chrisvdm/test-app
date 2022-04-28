@@ -8,6 +8,9 @@
   margin: 0 auto;
 }
 
+.header__title {
+  color: #64bbed;
+}
 
 .header__description {
   font-style: italic;
@@ -23,7 +26,7 @@
 }
 
 .feature__title {
-  color:#64bbed;
+  color:#3a444a;
 }
 
 .feature__description {
@@ -33,9 +36,27 @@
 
 .feature__field {
   margin-top: 0.625rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  color:#b3b9bd;
 }
 
 .feature__title,
 .feature__description {
   margin-bottom: 0;
+}
+
+.button {
+  background-color: #64bbed;
+  color: #fff;
+  border-radius: 2px;
+  border: none;
+  padding: 0.625rem;
+  box-shadow: 2px 2px #dcdbdb;
+  transition: ease-in-out 0.25s;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #3a444a;
 }
