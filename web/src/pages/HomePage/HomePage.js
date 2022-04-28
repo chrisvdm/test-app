@@ -1,4 +1,5 @@
 import { MetaTags } from '@redwoodjs/web'
+import Sandbox from 'src/components/Sandbox/Sandbox'
 
 const HomePage = () => {
   return (
@@ -14,7 +15,8 @@ const HomePage = () => {
             This app is intended to be used for testing separate components of
             the integration before updating the stripe-example-store
           </p>
-          <div className="sandbox"></div>
+
+          <Sandbox />
         </main>
       </div>
     </>
