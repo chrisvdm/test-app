@@ -4,7 +4,7 @@ import Sandbox from 'src/components/Sandbox/Sandbox'
 const HomePage = () => {
   return (
     <>
-      <MetaTags title="Home" description="Home page" />
+      <MetaTags title="redwoodjs-stripe" description="Sandbox" />
       <div className="site-wrapper">
         <header>
           <h1>redwoodjs-stripe</h1>

@@ -13,3 +13,29 @@
   font-style: italic;
   font-size: 20px;
 }
+
+.sandbox {
+  padding: 0 1.2rem;
+  padding-bottom: 1.2rem;
+  border: #e7e7e7 solid 1px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+
+.feature__title {
+  color:#64bbed;
+}
+
+.feature__description {
+  font-size: 0.8rem;
+  color:#3a444a;
+}
+
+.feature__field {
+  margin-top: 0.625rem;
+}
+
+.feature__title,
+.feature__description {
+  margin-bottom: 0;
+}

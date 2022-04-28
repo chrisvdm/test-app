@@ -1,12 +1,21 @@
-import { test } from 'redwoodjs-stripe'
+import { checkout } from 'redwoodjs-stripe'
+
+import Feature from '../Feature/Feature'
 
 const Sandbox = () => {
-  const handleTestLinkButtonClick = () => {
-    test()
+  const handleTestCheckoutButtonClick = () => {
+    checkout()
   }
+
   return (
     <div className="sandbox">
-      <button onClick={handleTestLinkButtonClick}>test link</button>
+      <Feature
+        title="checkout"
+        description="Redirects to stripe checkout page. Makes use of products on
+        stripe-example-store"
+      >
+        <button onClick={handleTestCheckoutButtonClick}>test checkout</button>
+      </Feature>
     </div>
   )
 }
