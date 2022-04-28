@@ -1,0 +1,15 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.site-wrapper {
+  width: 72.5%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+
+.header__description {
+  font-style: italic;
+  font-size: 20px;
+}
