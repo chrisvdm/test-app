@@ -24,7 +24,7 @@ const Sandbox = () => {
         title="products"
         description="Fetches products from Stripe Account"
       >
-        <p>// StripeProductsCell goes here</p>
+        <p>&#47;&#47; A list of StripeProducts goes here</p>
       </Feature>
     </div>
   )
