@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@redwoodjs/api": "^1.3.0",
-    "@redwoodjs/graphql-server": "^1.3.0"
+    "@redwoodjs/graphql-server": "^1.3.0",
+    "redwoodjs-stripe": "link:../../redwoodjs-stripe/"
   }
 }

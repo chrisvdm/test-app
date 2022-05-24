@@ -1,11 +1,14 @@
-import { checkout } from 'redwoodjs-stripe'
+import { useCheckoutHandler } from 'redwoodjs-stripe/web'
 
 import Feature from '../Feature/Feature'
 import Button from '../Button/Button'
 
 const Sandbox = () => {
-  const handleTestCheckoutButtonClick = () => {
-    checkout()
+  const checkout = useCheckoutHandler()
+
+  const handleTestCheckoutButtonClick = async () => {
+    const id = await checkout()
+    console.log(id)
   }
 
   return (
