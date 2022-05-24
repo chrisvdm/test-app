@@ -3,6 +3,7 @@
 .env
 .netlify
 .redwood
+redwoodjs-stripe
 dev.db*
 dist
 dist-babel

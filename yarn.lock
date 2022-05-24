@@ -7085,6 +7085,7 @@ __metadata:
   dependencies:
     "@redwoodjs/api": ^1.3.0
     "@redwoodjs/graphql-server": ^1.3.0
+    redwoodjs-stripe: "link:../../redwoodjs-stripe/"
   languageName: unknown
   linkType: soft
 
@@ -19893,12 +19894,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"redwoodjs-stripe@npm:^0.0.1":
-  version: 0.0.1
-  resolution: "redwoodjs-stripe@npm:0.0.1"
-  checksum: 5fd659594959681c53dd6449d0d4106508fba31d1de272269ea326cacf19991f8c72dff9455583e8939fe31c482406400cba85d58cf70534fe89dd9d2188e844
+"redwoodjs-stripe@link:../../redwoodjs-stripe/::locator=api%40workspace%3Aapi":
+  version: 0.0.0-use.local
+  resolution: "redwoodjs-stripe@link:../../redwoodjs-stripe/::locator=api%40workspace%3Aapi"
   languageName: node
-  linkType: hard
+  linkType: soft
+
+"redwoodjs-stripe@link:../../redwoodjs-stripe/::locator=web%40workspace%3Aweb":
+  version: 0.0.0-use.local
+  resolution: "redwoodjs-stripe@link:../../redwoodjs-stripe/::locator=web%40workspace%3Aweb"
+  languageName: node
+  linkType: soft
 
 "refractor@npm:^3.1.0":
   version: 3.6.0
@@ -20466,7 +20472,6 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@redwoodjs/core": ^1.3.0
-    redwoodjs-stripe: ^0.0.1
   languageName: unknown
   linkType: soft
 
@@ -23490,6 +23495,7 @@ __metadata:
     prop-types: 15.8.1
     react: 17.0.2
     react-dom: 17.0.2
+    redwoodjs-stripe: "link:../../redwoodjs-stripe/"
   languageName: unknown
   linkType: soft
 

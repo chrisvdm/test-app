@@ -3,8 +3,7 @@
   "workspaces": {
     "packages": [
       "api",
-      "web",
-      "packages/*"
+      "web"
     ]
   },
   "devDependencies": {
@@ -21,8 +20,5 @@
   "prisma": {
     "seed": "yarn rw exec seed"
   },
-  "packageManager": "yarn@3.2.0",
-  "dependencies": {
-    "redwoodjs-stripe": "^0.0.1"
-  }
+  "packageManager": "yarn@3.2.0"
 }
