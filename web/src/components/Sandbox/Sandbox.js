@@ -7,8 +7,11 @@ const Sandbox = () => {
   const checkout = useCheckoutHandler()
 
   const handleTestCheckoutButtonClick = async () => {
-    const id = await checkout()
-    console.log(id)
+    await checkout()
+
+    // Another option pass Stripe PK to checkout to use stripe redirect API web-side
+    // await checkout(process.env.STRIPE_PK)
+    // Alternative is add setup step which shares env vars with web side packages
   }
 
   return (
