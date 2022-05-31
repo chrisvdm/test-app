@@ -1,5 +1,7 @@
 import { useCheckoutHandler } from 'redwoodjs-stripe/web'
 
+import StripeProductsCell from 'src/components/StripeProductsCell/StripeProductsCell'
+
 import Feature from '../Feature/Feature'
 import Button from '../Button/Button'
 
@@ -31,6 +33,7 @@ const Sandbox = () => {
         description="Fetches products from Stripe Account"
       >
         <p>&#47;&#47; A list of StripeProducts goes here</p>
+        <StripeProductsCell />
       </Feature>
     </div>
   )
