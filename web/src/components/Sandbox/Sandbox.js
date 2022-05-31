@@ -33,7 +33,12 @@ const Sandbox = () => {
         description="Fetches products from Stripe Account"
       >
         <p>&#47;&#47; A list of StripeProducts goes here</p>
-        <StripeProductsCell />
+        <StripeProductsCell
+          params={{
+            productParams: { active: true },
+            priceParams: { type: 'one_time' },
+          }}
+        />
       </Feature>
     </div>
   )
