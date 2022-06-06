@@ -1,6 +1,7 @@
 import { useCheckoutHandler } from 'redwoodjs-stripe/web'
 
 import StripeProductsCell from 'src/components/StripeProductsCell/StripeProductsCell'
+import StripeProductCell from 'src/components/StripeProductCell'
 
 import Feature from '../Feature/Feature'
 import Button from '../Button/Button'
@@ -32,13 +33,16 @@ const Sandbox = () => {
         title="products"
         description="Fetches products from Stripe Account"
       >
-        <p>&#47;&#47; A list of StripeProducts goes here</p>
         <StripeProductsCell
           params={{
             productParams: { active: true },
             priceParams: { type: 'one_time' },
           }}
         />
+      </Feature>
+
+      <Feature title="cart machine" description="Adds items to cart">
+        <StripeProductCell id="price_1Kb1YmHMAJHtnk9iEdLwAqlB" />
       </Feature>
     </div>
   )

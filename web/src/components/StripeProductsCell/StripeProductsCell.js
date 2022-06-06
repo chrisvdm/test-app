@@ -1,3 +1,4 @@
+import { StripeProductCard } from 'redwoodjs-stripe/web'
 /*
   Fetches an array of products and their prices filtered via params.
   Available params can be found in Stripe API documentation (https://stripe.com/docs/api/products/list)
@@ -35,17 +36,20 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ products }) => {
-  const ProductCard = ({ name, description, price }) => (
-    <li style={productCardStyle}>
-      <h3>{name}</h3>
-      <p>{description}</p>
-      <p>{price}</p>
-    </li>
-  )
   return (
     <ul style={productCardListStyle}>
-      {products.map((item) => {
-        return <ProductCard key={item.id} {...item} />
+      {products.map(({ id, name, description, price }) => {
+        return (
+          <li
+            style={productCardListItemStyle}
+            key={`stripe-products-cell-${id}`}
+          >
+            <StripeProductCard name={name}>
+              <p>{description}</p>
+              <p>{price}</p>
+            </StripeProductCard>
+          </li>
+        )
       })}
     </ul>
   )
@@ -57,12 +61,6 @@ const productCardListStyle = {
   gap: '20px',
 }
 
-const productCardStyle = {
-  padding: '10px 20px',
-  borderRadius: '5px',
-  width: '1fr',
-  backgroundColor: '#fff',
-  color: '#3a444a',
-  boxShadow: '2px 2px #dcdbdb',
-  fontStyle: 'normal',
+const productCardListItemStyle = {
+  minWidth: '200px',
 }
