@@ -1,4 +1,5 @@
-import { StripeProductCard } from 'redwoodjs-stripe/web'
+import { StripeButton, useStripeCart } from 'redwoodjs-stripe/web'
+import './styles.css'
 /*
   Fetches an array of products and their prices filtered via params.
   Available params can be found in Stripe API documentation (https://stripe.com/docs/api/products/list)
@@ -20,7 +21,7 @@ export const QUERY = gql`
       id
       name
       description
-      image
+      images
       price
       type
     }
@@ -37,30 +38,47 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ products }) => {
   return (
-    <ul style={productCardListStyle}>
-      {products.map(({ id, name, description, price }) => {
+    <ul className="rws-products__list">
+      {products.map((product) => {
         return (
           <li
-            style={productCardListItemStyle}
-            key={`stripe-products-cell-${id}`}
+            className="rws-products__list__item"
+            key={`stripe-products-cell-${product.id}`}
           >
-            <StripeProductCard name={name}>
-              <p>{description}</p>
-              <p>{price}</p>
-            </StripeProductCard>
+            <Product {...product} />
           </li>
         )
       })}
     </ul>
   )
 }
-const productCardListStyle = {
-  listStyle: 'none',
-  padding: '0',
-  display: 'flex',
-  gap: '20px',
-}
 
-const productCardListItemStyle = {
-  minWidth: '200px',
+const Product = ({ name, description, price, id }) => {
+  const { addToCart } = useStripeCart()
+
+  const onAddToCartButtonClick = (item) => {
+    addToCart(item)
+  }
+  return (
+    <>
+      <div>
+        <h3>{name}</h3>
+        <p>{description}</p>
+        <p>
+          {(price / 100).toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD',
+          })}
+        </p>
+      </div>
+
+      <StripeButton
+        onClick={() =>
+          onAddToCartButtonClick({ name: name, id: id, price: price })
+        }
+      >
+        Add to Cart
+      </StripeButton>
+    </>
+  )
 }

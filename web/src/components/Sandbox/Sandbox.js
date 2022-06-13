@@ -1,16 +1,18 @@
-import { useCheckoutHandler } from 'redwoodjs-stripe/web'
+import { useCheckoutHandler, useStripeCart } from 'redwoodjs-stripe/web'
 
 import StripeProductsCell from 'src/components/StripeProductsCell/StripeProductsCell'
-import StripeProductCell from 'src/components/StripeProductCell'
+// import StripeProductCell from 'src/components/StripeProductCell'
 
 import Feature from '../Feature/Feature'
 import Button from '../Button/Button'
 
 const Sandbox = () => {
   const checkout = useCheckoutHandler()
+  const { cart } = useStripeCart()
 
   const handleTestCheckoutButtonClick = async () => {
-    await checkout()
+    console.log('checkout:', cart)
+    await checkout(cart)
 
     // Another option pass Stripe PK to checkout to use stripe redirect API web-side
     // await checkout(process.env.STRIPE_PK)
@@ -42,7 +44,7 @@ const Sandbox = () => {
       </Feature>
 
       <Feature title="cart machine" description="Adds items to cart">
-        <StripeProductCell id="price_1Kb1YmHMAJHtnk9iEdLwAqlB" />
+        {/* <StripeProductCell id="price_1Kb1YmHMAJHtnk9iEdLwAqlB" /> */}
       </Feature>
     </div>
   )
